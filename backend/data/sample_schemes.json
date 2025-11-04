@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "national_scholarship_portal",
+    "title": {
+      "en": "National Scholarship Portal (NSP)",
+      "ta": "தேசிய கல்வி உதவித்தொகை இணைய தளம் (NSP)"
+    },
+    "shortDescription": {
+      "en": "Single window to apply for central and state scholarships for school and college students.",
+      "ta": "பள்ளி மற்றும் கல்லூரி மாணவர்களுக்கு மைய மற்றும் மாநில உதவித்தொகைகளை ஒரே தளத்தில் விண்ணப்பிக்க உதவும் ஒருங்கிணைந்த வசதி."
+    },
+    "category": "Education & Learning",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        12,
+        30
+      ],
+      "gender": "any",
+      "incomeMax": 800000,
+      "occupations": [
+        "Student"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Scholarship amounts credited via Direct Benefit Transfer for eligible pre-matric, post-matric and merit schemes.",
+      "ta": "தகுதியான முன்-மேட்ரிக், பின்-மேட்ரிக் மற்றும் உச்ச மதிப்பெண் மாணவர்களுக்கு உதவித்தொகை தொகை நேரடி பயன் பரிமாற்றம் மூலம் சேர்க்கப்படும்."
+    },
+    "applicationUrl": "https://scholarships.gov.in/",
+    "lastDate": "2026-12-31",
+    "imageUrl": "https://dummyimage.com/640x360/1976d2/ffffff&text=National+Scholarship+Portal",
+    "badge": "Top Pick",
+    "agency": "Ministry of Education",
+    "highlight": "Covers 100+ central, state and UGC scholarships with a single login."
+  },
+  {
+    "id": "pm_poshan_midday_meal",
+    "title": {
+      "en": "PM POSHAN - Mid-Day Meal Scheme",
+      "ta": "பி.எம். போஷண் - மதிய உணவு திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Nutritious cooked meals for students studying in government and aided schools from classes I-VIII.",
+      "ta": "அரசு மற்றும் நிதியுதவி பள்ளிகளில் I - VIII வகுப்புகளில் படிக்கும் மாணவர்களுக்கு ஊட்டச்சத்து மிக்க சமைத்த உணவு வழங்குதல்."
+    },
+    "category": "Education & Learning",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        6,
+        14
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Student"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Daily hot cooked meals meeting prescribed calorie and protein norms, along with DBT support for cooking costs.",
+      "ta": "நியமிக்கப்பட்ட கலோரி மற்றும் புரத அளவுகளை பூர்த்தி செய்ய தினசரி சமைத்த உணவு மற்றும் சமையல் செலவுக்கான நேரடி நிதி ஆதரவு."
+    },
+    "applicationUrl": "https://pmposhan.education.gov.in/",
+    "lastDate": "2026-03-31",
+    "imageUrl": "https://dummyimage.com/640x360/0d47a1/ffffff&text=PM+POSHAN",
+    "badge": "Editor's Pick",
+    "agency": "Ministry of Education",
+    "highlight": "Serves over 11 crore children with fortified meals and local menu choices."
+  },
+  {
+    "id": "pre_matric_scholarship_sc_students",
+    "title": {
+      "en": "Pre-Matric Scholarship for SC Students",
+      "ta": "முன்-மேட்ரிக் கல்வி உதவித்தொகை (எஸ்.சி. மாணவர்கள்)"
+    },
+    "shortDescription": {
+      "en": "Financial assistance for SC students studying in classes IX and X to reduce dropout rates.",
+      "ta": "IX மற்றும் X வகுப்புகளில் படிக்கும் எஸ்.சி. மாணவர்களின் இடை நிறுத்துவதைத் தடுக்க நிதி உதவி."
+    },
+    "category": "Education & Learning",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        13,
+        18
+      ],
+      "gender": "any",
+      "incomeMax": 250000,
+      "occupations": [
+        "Student"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Monthly stipend up to Rs. 700 and annual ad-hoc grant of Rs. 1000 for eligible students.",
+      "ta": "தகுதியான மாணவர்களுக்கு மாதம் ரூ.700 வரை உதவித்தொகை மற்றும் ஆண்டுக்கு ரூ.1000 வரை கூடுதல் நிதி."
+    },
+    "applicationUrl": "https://scholarships.gov.in/",
+    "lastDate": "2026-09-30",
+    "imageUrl": "https://dummyimage.com/640x360/283593/ffffff&text=SC+Pre-Matric",
+    "badge": null,
+    "agency": "Ministry of Social Justice & Empowerment",
+    "highlight": "Supports residential and day scholars through direct bank transfer."
+  },
+  {
+    "id": "ayushman_bharat",
+    "title": {
+      "en": "Ayushman Bharat Pradhan Mantri Jan Arogya Yojana",
+      "ta": "ஆயுஷ்மான் பாரத் பிரதான் மந்திரி ஜன் ஆரோக்கிய திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Health insurance coverage up to Rs. 5 lakh per family per year for secondary and tertiary care.",
+      "ta": "ஒவ்வொரு குடும்பத்திற்கும் ஆண்டுக்கு ரூ.5 லட்சம் வரை இரண்டாம் மற்றும் மூன்றாம் நிலை மருத்துவச் செலவுக்கான காப்பீடு."
+    },
+    "category": "Health & Wellness",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        0,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Any"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Cashless treatment at empanelled hospitals with coverage for 1,949 medical procedures and pre/post hospitalization expenses.",
+      "ta": "1,949 மருத்துவ சிகிச்சைகளுக்கு முன் மற்றும் பிந்தைய செலவுகளுடன் இணைந்த மருத்துவமனைகளில் பணமில்லா சிகிச்சை."
+    },
+    "applicationUrl": "https://mera.pmjay.gov.in/search/login",
+    "lastDate": "2026-12-31",
+    "imageUrl": "https://dummyimage.com/640x360/1b5e20/ffffff&text=Ayushman+Bharat",
+    "badge": "Featured",
+    "agency": "National Health Authority",
+    "highlight": "Linked with ABHA digital health ID for seamless pre-authorisations."
+  },
+  {
+    "id": "jan_aushadhi",
+    "title": {
+      "en": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana",
+      "ta": "பிரதான் மந்திரி பாரதீய ஜனா அவுஷதி திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Access affordable generic medicines through Janaushadhi Kendras across the country.",
+      "ta": "நாட்டின் முழுவதும் உள்ள ஜனா அவுஷதி மையங்கள் மூலம் மலிவு விலை நிலையான மருந்துகளைப் பெறுதல்."
+    },
+    "category": "Health & Wellness",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        0,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Any"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Discounts of 50-90% on quality-assured generic medicines for chronic and acute illnesses.",
+      "ta": "நீடித்த மற்றும் திடீர் நோய்களுக்கான தரமான பொதுமருந்துகளில் 50-90% வரை தள்ளுபடி."
+    },
+    "applicationUrl": "https://janaushadhi.gov.in/",
+    "lastDate": "2026-06-30",
+    "imageUrl": "https://dummyimage.com/640x360/00695c/ffffff&text=Janaushadhi",
+    "badge": null,
+    "agency": "Department of Pharmaceuticals",
+    "highlight": "Locate nearby Kendra and order online using the Janaushadhi Sugam app."
+  },
+  {
+    "id": "janani_suraksha_yojana",
+    "title": {
+      "en": "Janani Suraksha Yojana",
+      "ta": "ஜனனி பாதுகாப்பு திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Conditional cash transfer to promote institutional deliveries for pregnant women.",
+      "ta": "கர்ப்பிணி மகளிர் மருத்துவமனையில் பிரசவிக்க ஊக்குவிக்கும் நிபந்தனை பண உதவி."
+    },
+    "category": "Women & Child",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        45
+      ],
+      "gender": "female",
+      "incomeMax": null,
+      "occupations": [
+        "Mother"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Cash assistance up to Rs. 7,000 for delivery and post-natal care in accredited facilities.",
+      "ta": "அங்கீகரிக்கப்பட்ட மருத்துவ நிலையங்களில் பிரசவம் மற்றும் பிந்தைய பராமரிப்பிற்காக ரூ.7,000 வரை நிதியுதவி."
+    },
+    "applicationUrl": "https://nhm.gov.in/index1.php?lang=1&level=3&sublinkid=841&lid=309",
+    "lastDate": "2026-12-31",
+    "imageUrl": "https://dummyimage.com/640x360/d81b60/ffffff&text=Janani+Suraksha",
+    "badge": "Priority",
+    "agency": "Ministry of Health & Family Welfare",
+    "highlight": "Special incentives for ASHA workers supporting high-risk pregnancies."
+  },
+  {
+    "id": "pradhan_mantri_matru_vandana_yojana",
+    "title": {
+      "en": "Pradhan Mantri Matru Vandana Yojana",
+      "ta": "பிரதான் மந்திரி மகப்பேறு வந்தனா திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Maternity benefit of Rs. 5,000 for wage-loss compensation during the first child birth.",
+      "ta": "முதல் குழந்தைப் பிறப்புக்கு வேலை இடைவெளி இழப்பீடு ரூ.5,000 அளவில் மகப்பேறு நிதியுதவி."
+    },
+    "category": "Women & Child",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        19,
+        45
+      ],
+      "gender": "female",
+      "incomeMax": null,
+      "occupations": [
+        "Mother"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Three instalments linked to antenatal check-ups, institutional delivery and child immunisation milestones.",
+      "ta": "கர்ப்ப பரிசோதனை, மருத்துவமனையில் பிரசவம், குழந்தை தடுப்பூசி என மூன்று கட்டங்களாகத் தொகை வழங்கப்படுகிறது."
+    },
+    "applicationUrl": "https://pmmvy.nic.in/",
+    "lastDate": "2026-09-30",
+    "imageUrl": "https://dummyimage.com/640x360/f06292/ffffff&text=PMMVY",
+    "badge": null,
+    "agency": "Ministry of Women & Child Development",
+    "highlight": "Integrated with Poshan Tracker for real-time service delivery."
+  },
+  {
+    "id": "sukanya_samriddhi_yojana",
+    "title": {
+      "en": "Sukanya Samriddhi Yojana",
+      "ta": "சுகன்யா சம்ருத்தி திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Long-term savings scheme for girl children with attractive interest rate and tax benefits.",
+      "ta": "பெண் குழந்தைகளுக்கான நீண்டகால சேமிப்பு திட்டம்; உயர்ந்த வட்டி விகிதமும் வரி சலுகையும்."
+    },
+    "category": "Women & Child",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        0,
+        10
+      ],
+      "gender": "female",
+      "incomeMax": null,
+      "occupations": [
+        "Girl Child"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Interest rate notified quarterly (currently 8.2%) with income tax benefits under Section 80C.",
+      "ta": "காலா காலமாக அறிவிக்கப்படும் வட்டி (தற்போது 8.2%) மற்றும் வரிச் சட்டம் பிரிவு 80C கீழ் சலுகை."
+    },
+    "applicationUrl": "https://www.indiapost.gov.in/Financial/Pages/Content/Sukanya-Samriddhi-Account.aspx",
+    "lastDate": "2026-12-31",
+    "imageUrl": "https://dummyimage.com/640x360/ad1457/ffffff&text=Sukanya+Samriddhi",
+    "badge": "Trending",
+    "agency": "Ministry of Finance",
+    "highlight": "Account can be opened at post offices and authorised banks nationwide."
+  },
+  {
+    "id": "pm_kisan",
+    "title": {
+      "en": "PM Kisan Samman Nidhi",
+      "ta": "பி.எம். கிசான் சன்மான் நிதி"
+    },
+    "shortDescription": {
+      "en": "Income support of Rs. 6,000 per year to eligible farmer families in three equal instalments.",
+      "ta": "தகுதியான விவசாயி குடும்பங்களுக்கு ஆண்டுக்கு ரூ.6,000 வருமான ஆதரவு; மூன்று சம தவணைகளாக வழங்கப்படும்."
+    },
+    "category": "Agriculture & Rural Development",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Farmer"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Direct transfer of Rs. 2,000 every four months to the bank accounts of registered small and marginal farmers.",
+      "ta": "பதிந்த சிறு மற்றும் குறுக்குப் பண்ணையர்களுக்கு நான்கு மாதங்களுக்கு ரூ.2,000 நேரடி மாற்றம்."
+    },
+    "applicationUrl": "https://pmkisan.gov.in/",
+    "lastDate": "2026-04-30",
+    "imageUrl": "https://dummyimage.com/640x360/2e7d32/ffffff&text=PM+Kisan",
+    "badge": "Featured",
+    "agency": "Ministry of Agriculture & Farmers Welfare",
+    "highlight": "e-KYC and Aadhaar seeding mandatory for timely instalments."
+  },
+  {
+    "id": "pm_fasal_bima_yojana",
+    "title": {
+      "en": "Pradhan Mantri Fasal Bima Yojana",
+      "ta": "பிரதான் மந்திரி பயிர் காப்பீட்டு திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Comprehensive crop insurance for farmers against natural calamities, pests and diseases.",
+      "ta": "இயற்கை பேரழிவுகள், பூச்சிகள் மற்றும் நோய்களுக்கு எதிரான வயல்வெளி காப்பீடு."
+    },
+    "category": "Agriculture & Rural Development",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Farmer"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Premium subsidy with farmer share capped at 2% for Kharif, 1.5% for Rabi and 5% for horticulture crops.",
+      "ta": "காரிஃப் 2%, ரபி 1.5% மற்றும் தோட்டக்கலை 5% வரை விவசாயிகள் செலுத்தும் சுருக் கட்டணம்; மீதியை அரசு ஏற்கும்."
+    },
+    "applicationUrl": "https://pmfby.gov.in/",
+    "lastDate": "2026-07-15",
+    "imageUrl": "https://dummyimage.com/640x360/33691e/ffffff&text=PMFBY",
+    "badge": null,
+    "agency": "Ministry of Agriculture & Farmers Welfare",
+    "highlight": "Claims settled through smart yield estimation and remote sensing data."
+  },
+  {
+    "id": "pm_svamitva_yojana",
+    "title": {
+      "en": "SVAMITVA - Survey of Villages and Mapping with Improvised Technology",
+      "ta": "ஸ்வாமித்வ - கிராம நிலப் பரப்பளவை நவீன தொழில்நுட்பத்தால் வரைபடமாக்குதல்"
+    },
+    "shortDescription": {
+      "en": "Rural property cards for village household owners using drone surveys and GIS mapping.",
+      "ta": "ட்ரோன் மற்றும் GIS வரைபடம் மூலம் கிராம வீட்டு நிலங்களுக்கு உரிமை அட்டைகளை வழங்கும் முயற்சி."
+    },
+    "category": "Agriculture & Rural Development",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Village Household"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Digital property cards enabling collateral for credit and dispute-free land records.",
+      "ta": "கடன் பெற கூடுதலான கையிருப்பு மற்றும் சச்சரவு இல்லா நில பதிவுகளுக்கான டிஜிட்டல் உரிமை அட்டைகள்."
+    },
+    "applicationUrl": "https://svamitva.nic.in/",
+    "lastDate": "2026-08-31",
+    "imageUrl": "https://dummyimage.com/640x360/1b5e20/ffffff&text=SVAMITVA",
+    "badge": null,
+    "agency": "Ministry of Panchayati Raj",
+    "highlight": "Integrates drone survey layers with PM GatiShakti rural planning."
+  },
+  {
+    "id": "pm_awas_yojana_urban",
+    "title": {
+      "en": "Pradhan Mantri Awas Yojana (Urban)",
+      "ta": "பிரதான் மந்திரி வீடமைப்பு திட்டம் (நகர்ப்புறம்)"
+    },
+    "shortDescription": {
+      "en": "Affordable housing through credit-linked subsidy and in-situ slum redevelopment for urban poor.",
+      "ta": "நகர்ப்புற ஏழைகளுக்கு கடன் இணைந்த மானியம் மற்றும் இடத்தில் உள்ள குடிசை மேம்பாடு மூலம் மலிவான வீடமைப்பு."
+    },
+    "category": "Housing",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        21,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": 1800000,
+      "occupations": [
+        "Urban Household"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Credit-linked subsidy up to Rs. 2.67 lakh and support for beneficiary-led house construction.",
+      "ta": "கடன் இணைந்த மானியமாக ரூ.2.67 லட்சம் வரை மற்றும் பயனாளி முன்னிலை வீடு கட்டுதலுக்கு ஆதரவு."
+    },
+    "applicationUrl": "https://pmaymis.gov.in/pmaymis2_2024/PMAY_SURVEY/Applicant_Login.aspx",
+    "lastDate": "2026-03-31",
+    "imageUrl": "https://dummyimage.com/640x360/ff6f00/ffffff&text=PMAY+Urban",
+    "badge": "Top Pick",
+    "agency": "Ministry of Housing & Urban Affairs",
+    "highlight": "Geo-tagged progress monitoring via PMAY-U CLSS tracker."
+  },
+  {
+    "id": "pm_awas_yojana_gramin",
+    "title": {
+      "en": "Pradhan Mantri Awas Yojana (Gramin)",
+      "ta": "பிரதான் மந்திரி வீடமைப்பு திட்டம் (கிராமப்புறம்)"
+    },
+    "shortDescription": {
+      "en": "Housing for all rural households with pucca construction and convergence with other amenities.",
+      "ta": "கிராமப்புற குடும்பங்களுக்கு பக்கா வீடுகள் மற்றும் பிற அடிப்படை வசதிகளுடன் வீடமைப்பு அனைவருக்கும்."
+    },
+    "category": "Housing",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        21,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Rural Household"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Assistance up to Rs. 1.3 lakh in plain areas and Rs. 1.5 lakh in hilly states with MGNREGA wage convergence.",
+      "ta": "தாழ்வுப்பகுதியில் ரூ.1.3 லட்சம், மலைப்பகுதியில் ரூ.1.5 லட்சம் வரை உதவி; MGNREGA ஊதிய இணைப்பு."
+    },
+    "applicationUrl": "https://pmayg.drd.nic.in/",
+    "lastDate": "2026-05-31",
+    "imageUrl": "https://dummyimage.com/640x360/f57c00/ffffff&text=PMAY+Gramin",
+    "badge": null,
+    "agency": "Ministry of Rural Development",
+    "highlight": "AwaasSoft portal tracks beneficiary selection and fund release."
+  },
+  {
+    "id": "pradhan_mantri_jan_dhan_yojana",
+    "title": {
+      "en": "Pradhan Mantri Jan-Dhan Yojana",
+      "ta": "பிரதான் மந்திரி ஜன்-தன் திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Zero-balance bank accounts with RuPay card, overdraft facility and insurance cover for the unbanked.",
+      "ta": "வங்கி சேவையிலிருந்து விலகியவர்களுக்கு ரூபே கார்டு, ஓவர்ட்ராஃப்ட், காப்பீடு கொண்ட பூஜ்ய இருப்புப் வங்கி கணக்குகள்."
+    },
+    "category": "Financial Services",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        10,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Any"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Accidental insurance up to Rs. 2 lakh and overdraft up to Rs. 10,000 after satisfactory account operation.",
+      "ta": "சீரான கணக்கு இயக்கத்திற்குப் பிறகு ரூ.2 லட்சம் வரை விபத்து காப்பீடு, ரூ.10,000 வரை ஓவர்ட்ராஃப்ட்."
+    },
+    "applicationUrl": "https://pmjdy.gov.in/",
+    "lastDate": "2026-12-31",
+    "imageUrl": "https://dummyimage.com/640x360/006064/ffffff&text=Jan+Dhan",
+    "badge": null,
+    "agency": "Ministry of Finance",
+    "highlight": "Linked with DBT for 400+ welfare schemes and RuPay card insurance renewal."
+  },
+  {
+    "id": "pradhan_mantri_mudra_yojana",
+    "title": {
+      "en": "Pradhan Mantri Mudra Yojana",
+      "ta": "பிரதான் மந்திரி முத்ரா திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Collateral-free loans up to Rs. 10 lakh for micro and small enterprises under Shishu, Kishor and Tarun categories.",
+      "ta": "சிசு, கிஷோர், தருண் பிரிவுகளின் கீழ் சிறு தொழில்களுக்கு ரூ.10 லட்சம் வரை அடமானமில்லா கடன்."
+    },
+    "category": "Financial Services",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        65
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Entrepreneur"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Interest subsidy through partner banks and refinance support from MUDRA for micro units.",
+      "ta": "கூட்டு வங்கிகள் மூலம் வட்டிச் சலுகை; மைக்ரோ அலகுகளுக்கு முத்ரா மறுஉதவி."
+    },
+    "applicationUrl": "https://www.mudra.org.in/",
+    "lastDate": "2026-09-30",
+    "imageUrl": "https://dummyimage.com/640x360/004d40/ffffff&text=MUDRA",
+    "badge": "Featured",
+    "agency": "Micro Units Development & Refinance Agency",
+    "highlight": "Dedicated portal for SHG/JLG applications with e-KYC onboarding."
+  },
+  {
+    "id": "atal_pension_yojana",
+    "title": {
+      "en": "Atal Pension Yojana",
+      "ta": "அட்டல் ஓய்வூதிய திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Guaranteed monthly pension between Rs. 1,000 and Rs. 5,000 after 60 years for informal sector workers.",
+      "ta": "அமைப்பு இல்லாத துறையிலுள்ள பணியாளர்களுக்கு 60 வயதிற்குப் பிறகு ரூ.1,000 முதல் ரூ.5,000 வரை உறுதி செய்யப்பட்ட ஓய்வூதியம்."
+    },
+    "category": "Financial Services",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        40
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Worker"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Government co-contribution for eligible subscribers and guaranteed pension as per contribution slab.",
+      "ta": "தகுதியான சந்தாதாரர்களுக்கு அரசின் கூட்டு பங்களிப்பு மற்றும் பங்களிப்பு மட்டத்திற்கு ஏற்ப உறுதி செய்யப்பட்ட ஓய்வூதியம்."
+    },
+    "applicationUrl": "https://www.npscra.nsdl.co.in/",
+    "lastDate": "2026-12-31",
+    "imageUrl": "https://dummyimage.com/640x360/00695c/ffffff&text=APY",
+    "badge": null,
+    "agency": "Pension Fund Regulatory and Development Authority",
+    "highlight": "Auto-debit from savings account with PRAN-based tracking."
+  },
+  {
+    "id": "startup_india",
+    "title": {
+      "en": "Startup India Seed Fund Scheme",
+      "ta": "ஸ்டார்ட்அப் இந்தியா விதை நிதி திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Seed funding support up to Rs. 5 crore for DPIIT-recognised startups via incubators.",
+      "ta": "DPIIT அங்கீகரித்த ஸ்டார்ட்அப்புகளுக்கு இன்க்யூபேட்டர்கள் மூலம் ரூ.5 கோடி வரை விதை நிதி ஆதரவு."
+    },
+    "category": "Business & MSME",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Startup Founder"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Grants for prototype development and market entry equity support through partner incubators.",
+      "ta": "மாதிரிப் பொருள் மேம்பாட்டுக்கான நிதி, சந்தை நுழைவுக்கான ஈக்விட்டி ஆதரவு."
+    },
+    "applicationUrl": "https://www.startupindia.gov.in/",
+    "lastDate": "2026-06-30",
+    "imageUrl": "https://dummyimage.com/640x360/6a1b9a/ffffff&text=Startup+India",
+    "badge": "Trending",
+    "agency": "Department for Promotion of Industry & Internal Trade",
+    "highlight": "Centralised DPIIT dashboard for monitoring incubator disbursement."
+  },
+  {
+    "id": "pm_sv_anidhi",
+    "title": {
+      "en": "PM SVANidhi - Street Vendor’s AtmaNirbhar Nidhi",
+      "ta": "பி.எம். ஸ்வநிதி - தெரு வியாபாரிகளுக்கான ஆத்மநிர்பர் நிதி"
+    },
+    "shortDescription": {
+      "en": "Micro-credit up to Rs. 50,000 with interest subsidy for street vendors to restart businesses.",
+      "ta": "தெரு வியாபாரிகள் தங்கள் வியாபாரத்தை மீண்டும் தொடங்க ரூ.50,000 வரை வட்டிச் சலுகையுடன் மைக்ரோ கடன்."
+    },
+    "category": "Business & MSME",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        65
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Street Vendor"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "7% interest subsidy, cashback incentives for digital transactions and credit score upgrading.",
+      "ta": "7% வட்டிச் சலுகை, டிஜிட்டல் பரிவர்த்தனைகளுக்கு கேஷ்பேக், கடன் மதிப்பெண் மேம்பாடு."
+    },
+    "applicationUrl": "https://pmsvanidhi.mohua.gov.in/",
+    "lastDate": "2026-08-31",
+    "imageUrl": "https://dummyimage.com/640x360/4a148c/ffffff&text=PM+SVANidhi",
+    "badge": null,
+    "agency": "Ministry of Housing & Urban Affairs",
+    "highlight": "e-SHRAM and Udyam integration simplifies vendor verification."
+  },
+  {
+    "id": "stand_up_india",
+    "title": {
+      "en": "Stand-Up India Scheme",
+      "ta": "ஸ்டாண்ட்-அப் இந்தியா திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Bank loans between Rs. 10 lakh and Rs. 1 crore for women, SC/ST entrepreneurs to start enterprises.",
+      "ta": "பெண்கள், எஸ்.சி./எஸ்.டி. தொழில்முனைவோர்களுக்கு ரூ.10 லட்சம் முதல் ரூ.1 கோடி வரை வங்கி கடன்."
+    },
+    "category": "Business & MSME",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Entrepreneur"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Composite loans with working capital component and credit guarantee coverage.",
+      "ta": "வேலை மூலதனத்தை உள்ளடக்கிய கலப்பு கடன் மற்றும் கடன் உத்தரவாத பாதுகாப்பு."
+    },
+    "applicationUrl": "https://www.standupmitra.in/",
+    "lastDate": "2026-09-30",
+    "imageUrl": "https://dummyimage.com/640x360/311b92/ffffff&text=Stand-Up+India",
+    "badge": null,
+    "agency": "Small Industries Development Bank of India",
+    "highlight": "Dedicated portal maps bank branches and handholding agencies for applicants."
+  },
+  {
+    "id": "skill_india",
+    "title": {
+      "en": "Skill India Digital Platform",
+      "ta": "ஸ்கில் இந்தியா டிஜிட்டல் தளம்"
+    },
+    "shortDescription": {
+      "en": "Nationwide portal offering skilling courses, apprenticeship matching and certificates.",
+      "ta": "திறன் மேம்பாட்டு பாடங்கள், பழகுனர் வாய்ப்புகள், சான்றிதழ்கள் வழங்கும் தேசிய தளம்."
+    },
+    "category": "Employment & Skill Development",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        15,
+        60
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Job Seeker"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Free access to Skill India courses, job fairs, NSDC certifications and digital locker badges.",
+      "ta": "ஸ்கில் இந்தியா பாடங்கள், வேலை களவிழாக்கள், NSDC சான்றிதழ்கள், டிஜிட்டல் லாக்கர் அடையாளங்கள் இலவசமாக."
+    },
+    "applicationUrl": "https://www.skillindia.gov.in/",
+    "lastDate": "2026-12-31",
+    "imageUrl": "https://dummyimage.com/640x360/ef6c00/ffffff&text=Skill+India",
+    "badge": "Hot",
+    "agency": "Ministry of Skill Development & Entrepreneurship",
+    "highlight": "Integrates DigiLocker and Aadhaar for instant certificate retrieval."
+  },
+  {
+    "id": "pm_kaushal_vikas_yojana",
+    "title": {
+      "en": "Pradhan Mantri Kaushal Vikas Yojana",
+      "ta": "பிரதான் மந்திரி திறன் மேம்பாட்டு திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Short-term training and RPL certification with stipend support for youth across priority sectors.",
+      "ta": "முக்கிய துறைகளில் இளைஞர்களுக்கு குறுகியகால பயிற்சி, முன் அனுபவ அங்கீகாரம் மற்றும் உதவித்தொகை ஆதரவு."
+    },
+    "category": "Employment & Skill Development",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        45
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Job Seeker"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Training cost fully borne by government with placement-linked incentives and skill cards.",
+      "ta": "பயிற்சி செலவுகள் அரசு ஏற்கும்; வேலைவாய்ப்பு இணைப்பு ஊக்கத்தொகை மற்றும் திறன் அட்டை வழங்கப்படும்."
+    },
+    "applicationUrl": "https://www.pmkvyofficial.org/",
+    "lastDate": "2026-05-31",
+    "imageUrl": "https://dummyimage.com/640x360/e65100/ffffff&text=PMKVY",
+    "badge": null,
+    "agency": "National Skill Development Corporation",
+    "highlight": "AI-driven aptitude assessment recommends best-fit job roles."
+  },
+  {
+    "id": "employment_guarantee",
+    "title": {
+      "en": "Mahatma Gandhi National Rural Employment Guarantee Scheme",
+      "ta": "மகாத்மா காந்தி தேசிய கிராமப்புற வேலை உறுதி திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Guarantees 100 days of wage employment to rural households willing to do unskilled manual work.",
+      "ta": "கைவேலை செய்ய முன்வரும் கிராமப்புற குடும்பங்களுக்கு ஆண்டுக்கு 100 நாள் வேலையை உறுதி செய்யும் திட்டம்."
+    },
+    "category": "Employment & Skill Development",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Rural Worker"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Timely wage payments credited to bank accounts with unemployment allowance if work not provided.",
+      "ta": "வேலை வழங்கப்படாவிட்டால் வேலை இழப்பு நிதியுடன், வங்கிக் கணக்கில் நேர்மையான ஊதியப் புகுத்தல்."
+    },
+    "applicationUrl": "https://nrega.nic.in/netnrega/home.aspx",
+    "lastDate": "2026-03-31",
+    "imageUrl": "https://dummyimage.com/640x360/ef6c00/ffffff&text=MGNREGA",
+    "badge": null,
+    "agency": "Ministry of Rural Development",
+    "highlight": "NMMS attendance app enables geo-tagged muster verification."
+  },
+  {
+    "id": "digital_india",
+    "title": {
+      "en": "Digital India Programme",
+      "ta": "டிஜிட்டல் இந்தியா திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Capacity building for citizens and small businesses to adopt e-governance and digital payments.",
+      "ta": "மக்கள் மற்றும் சிறு தொழில்களுக்கு மின்னணு நிர்வாகம் மற்றும் டிஜிட்டல் பணப்பரிவர்த்தனையை கற்றுத்தரும் திறன் வளர்ப்பு."
+    },
+    "category": "Employment & Skill Development",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        15,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Citizen"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Access to digital literacy courses, CSC entrepreneurship kits and on-boarding to BHIM/UPI platforms.",
+      "ta": "டிஜிட்டல் எழுத்தறிவு பாடங்கள், பொதுச் சேவை மைய தொழில்முனைவர் கிட்டுகள், BHIM/UPI தளங்களில் பதிவு."
+    },
+    "applicationUrl": "https://digitalindia.gov.in/",
+    "lastDate": "2026-12-31",
+    "imageUrl": "https://dummyimage.com/640x360/ff7043/ffffff&text=Digital+India",
+    "badge": null,
+    "agency": "Ministry of Electronics & Information Technology",
+    "highlight": "DigiLocker integration enables secure document exchange with departments."
+  },
+  {
+    "id": "swachh_bharat",
+    "title": {
+      "en": "Swachh Bharat Mission - Urban",
+      "ta": "சுவச்ச் பாரத் முயற்சி - நகர்ப்புறம்"
+    },
+    "shortDescription": {
+      "en": "Support for household toilets, solid waste management and sanitation awareness in urban local bodies.",
+      "ta": "நகர்ப்புற உள்ளூராட்சி அமைப்புகளில் கழிப்பறை அமைத்தல், திடக் குப்பை மேலாண்மை, சுகாதார விழிப்புணர்வு ஆதரவு."
+    },
+    "category": "Social Security",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Urban Household"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Capital grants for individual household latrines and infrastructure for solid waste processing.",
+      "ta": "குடும்ப கழிப்பறை அமைப்பிற்கான முதலீட்டு உதவி மற்றும் திடக் குப்பை செயலாக்க வசதிக்கான நிதி."
+    },
+    "applicationUrl": "https://swachhbharatmission.gov.in/",
+    "lastDate": "2026-10-31",
+    "imageUrl": "https://dummyimage.com/640x360/1976d2/ffffff&text=Swachh+Bharat",
+    "badge": null,
+    "agency": "Ministry of Housing & Urban Affairs",
+    "highlight": "ULB dashboard tracks sanitation scorecards and citizen feedback."
+  },
+  {
+    "id": "pradhan_mantri_garib_kalyan",
+    "title": {
+      "en": "Pradhan Mantri Garib Kalyan Package",
+      "ta": "பிரதான் மந்திரி गरीब् कल्याण् தொகுப்பு"
+    },
+    "shortDescription": {
+      "en": "Comprehensive social security package covering insurance, food grains and DBT support to vulnerable households.",
+      "ta": "பாதிக்கப்பட்ட குடும்பங்களுக்கு காப்பீடு, இலவச உணவுத்தானியம் மற்றும் நேரடி நிதி வழங்கும் முழுமையான சமூக பாதுகாப்பு தொகுப்பு."
+    },
+    "category": "Social Security",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Low Income Household"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Free food grains under NFSA, Rs. 500/month to Jan Dhan women account holders and EPF support for low-wage workers.",
+      "ta": "NFSA வழியாக இலவச தானியம், ஜன் தன் பெண்கள் கணக்கில் மாதம் ரூ.500, குறைந்த ஊதிய ஊழியர்களுக்கான EPF பங்களிப்பு."
+    },
+    "applicationUrl": "https://www.pmgky.gov.in/",
+    "lastDate": "2026-03-31",
+    "imageUrl": "https://dummyimage.com/640x360/1976d2/ffffff&text=PMGKP",
+    "badge": null,
+    "agency": "Ministry of Finance",
+    "highlight": "Supports One Nation One Ration Card portability for migrant households."
+  },
+  {
+    "id": "ration_card_services",
+    "title": {
+      "en": "One Nation One Ration Card Services",
+      "ta": "ஒன் நேஷன் ஒன் ரேஷன் கார்டு சேவைகள்"
+    },
+    "shortDescription": {
+      "en": "Nation-wide portability for NFSA ration cards enabling subsidised food grains anywhere in India.",
+      "ta": "NFSA ரேஷன் கார்டுகளுக்கு நாடு முழுவதும் ஒரேபோல் பயன்படும் வகையில் தள்ளுபடி தானியம் பெறும் வசதி."
+    },
+    "category": "Social Security",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "NFSA Beneficiary"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Access subsidised food grains from any fair price shop using Aadhaar or ration card QR authentication.",
+      "ta": "ஆதார் அல்லது ரேஷன் QR மூலம் நாட்டின் எந்த நீதிமான கடையிலும் தள்ளுபடி தானியம் பெறும் சுலபம்."
+    },
+    "applicationUrl": "https://nfsa.gov.in/",
+    "lastDate": "2026-12-31",
+    "imageUrl": "https://dummyimage.com/640x360/0d47a1/ffffff&text=Ration+Card",
+    "badge": null,
+    "agency": "Department of Food & Public Distribution",
+    "highlight": "Integrated ANNAPURNA DBT dashboard provides family-wise transaction history."
+  },
+  {
+    "id": "indira_gandhi_national_old_age_pension",
+    "title": {
+      "en": "Indira Gandhi National Old Age Pension Scheme",
+      "ta": "இந்திரா காந்தி தேசிய முதியோர் ஓய்வூதிய திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Monthly pension support for senior citizens belonging to Below Poverty Line households.",
+      "ta": "வறுமைக் கோட்டுக்கு கீழ் உள்ள குடும்பங்களில் சேர்ந்த முதியவர்களுக்கு மாதாந்திர ஓய்வூதிய ஆதரவு."
+    },
+    "category": "Social Security",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        60,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Senior Citizen"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Central assistance of Rs. 200 per month (60-79 years) and Rs. 500 per month (80+ years) with additional state top-up.",
+      "ta": "60-79 வயதிற்கு மாதம் ரூ.200, 80+ வயதிற்கு ரூ.500 அளவில் மத்திய உதவி; மாநிலங்கள் கூடுதலாக வழங்கலாம்."
+    },
+    "applicationUrl": "https://nsap.nic.in/",
+    "lastDate": "2026-04-30",
+    "imageUrl": "https://dummyimage.com/640x360/1565c0/ffffff&text=IGNOAPS",
+    "badge": null,
+    "agency": "Ministry of Rural Development",
+    "highlight": "Aadhaar Enabled Payment System ensures doorstep pension delivery."
+  },
+  {
+    "id": "unique_disability_id",
+    "title": {
+      "en": "Unique Disability ID (UDID) Card",
+      "ta": "தனித்துவமான மாற்றுத்திறனாளர் அடையாள அட்டை (UDID)"
+    },
+    "shortDescription": {
+      "en": "National identity card for persons with disabilities to access benefits and certifications.",
+      "ta": "மாற்றுத்திறனாளிகள் அரசு நலன்களைப் பெற தேசிய அடையாள அட்டை மற்றும் சான்றிதழ்."
+    },
+    "category": "Specially Abled",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        0,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Person with Disability"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Single UDID card recognised across India for availing disability pensions, concessions and assistive devices.",
+      "ta": "சகாய கருவிகள், ஓய்வூதியம், தள்ளுபடி உள்ளிட்ட நலன்களுக்கு நாடு முழுவதும் செல்லுபடியாகும் ஒரே UDID அட்டை."
+    },
+    "applicationUrl": "https://www.swavlambancard.gov.in/",
+    "lastDate": "2026-11-30",
+    "imageUrl": "https://dummyimage.com/640x360/fbc02d/ffffff&text=UDID",
+    "badge": "Priority",
+    "agency": "Department of Empowerment of Persons with Disabilities",
+    "highlight": "Online application with hospital empanelment for digital disability assessment."
+  },
+  {
+    "id": "sugamya_bharat_abhiyan",
+    "title": {
+      "en": "Accessible India (Sugamya Bharat) Campaign",
+      "ta": "அணுகல் இந்தியா (சுகம்யா பாரத்) இயக்கம்"
+    },
+    "shortDescription": {
+      "en": "Infrastructure and ICT accessibility retrofitting for persons with disabilities in public spaces.",
+      "ta": "பொது இடங்களில் மாற்றுத்திறனாளிகளுக்கான உட்கட்டமைப்பு மற்றும் தகவல் தொடர்பு வசதிகளை மேம்படுத்தல்."
+    },
+    "category": "Specially Abled",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        0,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Person with Disability"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Funding support for ramps, tactile paths, accessible toilets and mobile app-based feedback mechanisms.",
+      "ta": "ரேம்ப், தொட்டுணரக்கூடிய பாதை, அணுகக்கூடிய கழிப்பறை, அப் அடிப்படையிலான கருத்துகள் ஆகியவற்றுக்கான நிதி."
+    },
+    "applicationUrl": "https://sugamyabharat.gov.in/",
+    "lastDate": "2026-07-31",
+    "imageUrl": "https://dummyimage.com/640x360/fdd835/000000&text=Sugamya+Bharat",
+    "badge": null,
+    "agency": "Department of Empowerment of Persons with Disabilities",
+    "highlight": "Mobile app crowdsources accessibility gaps for quick redressal."
+  },
+  {
+    "id": "pm_surya_ghar_muft_bijli",
+    "title": {
+      "en": "PM Surya Ghar: Muft Bijli Yojana",
+      "ta": "பி.எம். சூர்யா கார்: இலவச மின்திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Central subsidy covering up to 60% of rooftop solar costs for households generating 300 units monthly.",
+      "ta": "ஒரு மாதம் 300 யூனிட் மின்சாரம் உருவாக்கும் வீடுகளுக்கான கூரை மேல் சோலார் அமைப்பில் 60% வரை மத்திய மானியம்."
+    },
+    "category": "Housing",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": 1500000,
+      "occupations": [
+        "Urban Household",
+        "Rural Household"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Direct support up to Rs. 78,000 transferred after commissioning along with remote net-metering onboarding.",
+      "ta": "சோலார் அமைப்பு செயல்படுத்தப்பட்ட பிறகு நேரடி பரிமாற்றமாக ரூ.78,000 வரை நிதி மற்றும் நீட்-மீட்டர் இணைப்பு உதவி."
+    },
+    "applicationUrl": "https://pmsuryaghar.gov.in/",
+    "lastDate": "2027-03-31",
+    "imageUrl": "https://dummyimage.com/640x360/ff9800/ffffff&text=PM+Surya+Ghar",
+    "badge": "New",
+    "agency": "Ministry of New & Renewable Energy",
+    "highlight": "Unified national portal with DISCOM integration for 2025 rooftop solar targets."
+  },
+  {
+    "id": "pm_vishwakarma",
+    "title": {
+      "en": "PM Vishwakarma Scheme",
+      "ta": "பி.எம். விஷ்வகிர்மா திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Skill upgrade, toolkit and concessional credit for 18 traditional artisan trades with digital identity.",
+      "ta": "18 பாரம்பரிய கைவினைப் பணிகளுக்கான திறன் மேம்பாடு, கருவி தொகுப்பு மற்றும் சலுகை கடன்."
+    },
+    "category": "Business & MSME",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Artisan",
+        "Craftsperson"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Rs. 15,000 toolkit incentive, Rs. 1 lakh first tranche loan at 5% interest with digital payment onboarding.",
+      "ta": "கருவி ஊக்கமாக ரூ.15,000, 5% வட்டியில் ரூ.1 லட்சம் வரை கடன் மற்றும் டிஜிட்டல் கட்டண பயிற்சி."
+    },
+    "applicationUrl": "https://pmvishwakarma.gov.in/",
+    "lastDate": "2026-09-30",
+    "imageUrl": "https://dummyimage.com/640x360/5e35b1/ffffff&text=PM+Vishwakarma",
+    "badge": "Priority",
+    "agency": "Ministry of Micro, Small & Medium Enterprises",
+    "highlight": "Udyam Assist and Aadhaar-based artisan ID enable faster bank onboarding in FY 2025."
+  },
+  {
+    "id": "lakhpati_didi",
+    "title": {
+      "en": "Lakhpati Didi Initiative",
+      "ta": "லக்பதி திதி முயற்சி"
+    },
+    "shortDescription": {
+      "en": "Mission to support SHG women in reaching annual income of Rs. 1 lakh with market linkages and skilling.",
+      "ta": "சுயஉதவி குழு பெண்கள் ஆண்டுக்கு ரூ.1 லட்சம் வருமானத்தைப் பெற திறன், சந்தை இணைப்புகள் வழங்கும் தேசிய திட்டம்."
+    },
+    "category": "Women & Child",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        18,
+        null
+      ],
+      "gender": "female",
+      "incomeMax": null,
+      "occupations": [
+        "SHG Member"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "Mentoring, credit access under DAY-NRLM and e-commerce partnerships to scale SHG enterprises.",
+      "ta": "DAY-NRLM வழியாக வழிகாட்டல், கடன், மின் வணிக இணைப்புகள் மூலம் சுய உதவி குழு தொழில்கள் விரிவாக்கம்."
+    },
+    "applicationUrl": "https://aajeevika.gov.in/en/lakhpati-didi",
+    "lastDate": "2026-12-31",
+    "imageUrl": "https://dummyimage.com/640x360/f06292/ffffff&text=Lakhpati+Didi",
+    "badge": "Flagship",
+    "agency": "Ministry of Rural Development",
+    "highlight": "2025 roadmap targets 2 crore SHG women with dedicated district facilitation cells."
+  },
+  {
+    "id": "namo_drone_didi",
+    "title": {
+      "en": "Namo Drone Didi Scheme",
+      "ta": "நமோ டிரோன் திடி திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Training and subsidised drones for SHG women to provide precision agriculture services in villages.",
+      "ta": "கிராமங்களில் சுய உதவி குழு பெண்கள் துல்லியக் களம் சேவைகளை வழங்க டிரோன் பயிற்சி மற்றும் மானியம்."
+    },
+    "category": "Employment & Skill Development",
+    "state": "All India",
+    "eligibility": {
+      "ageRange": [
+        21,
+        55
+      ],
+      "gender": "female",
+      "incomeMax": null,
+      "occupations": [
+        "SHG Member"
+      ],
+      "states": [
+        "All India"
+      ]
+    },
+    "benefits": {
+      "en": "75% capital subsidy on agriculture drones, annual maintenance grants and FPO service contracts.",
+      "ta": "வேளாண்மை டிரோன்களுக்கு 75% முதலீட்டு மானியம், பராமரிப்பு நிதி மற்றும் FPO ஒப்பந்தங்கள்."
+    },
+    "applicationUrl": "https://agricoop.gov.in/en/namo-drone-didi",
+    "lastDate": "2026-08-31",
+    "imageUrl": "https://dummyimage.com/640x360/03a9f4/ffffff&text=Drone+Didi",
+    "badge": "Trending",
+    "agency": "Ministry of Agriculture & Farmers Welfare",
+    "highlight": "Linked with PM FPO convergence and GAINS drone registry for 2025 season deployments."
+  },
+  {
+    "id": "karunya_arogya_suraksha",
+    "title": {
+      "en": "Karunya Arogya Suraksha Padhathi",
+      "ta": "கருண்ய ஆரோக்கிய பாதுகாப்பு திட்டம்"
+    },
+    "shortDescription": {
+      "en": "Kerala state health insurance providing Rs. 5 lakh coverage aligned with Ayushman Bharat benefits.",
+      "ta": "ஆயுஷ்மான் பாரத் தரத்துடன் ரூ.5 லட்சம் வரை கேரளா மாநில மருத்துவ காப்பீடு."
+    },
+    "category": "Health & Wellness",
+    "state": "Kerala",
+    "eligibility": {
+      "ageRange": [
+        0,
+        null
+      ],
+      "gender": "any",
+      "incomeMax": null,
+      "occupations": [
+        "Any"
+      ],
+      "states": [
+        "Kerala"
+      ]
+    },
+    "benefits": {
+      "en": "Cashless treatment at empanelled hospitals plus Rs. 50,000 top-up for catastrophic illnesses in 2025.",
+      "ta": "அங்கீகரிக்கப்பட்ட மருத்துவமனைகளில் பணமில்லா சிகிச்சை மற்றும் 2025 புதிய கடுமை நோய்களுக்கு ரூ.50,000 கூடுதல்."
+    },
+    "applicationUrl": "https://karunya.kerala.gov.in/",
+    "lastDate": "2026-03-31",
+    "imageUrl": "https://dummyimage.com/640x360/2e7d32/ffffff&text=Karunya+Health",
+    "badge": null,
+    "agency": "Government of Kerala",
+    "highlight": "Seamless ABHA-linked enrolment through e-health portal with multilingual call centre support."
+  }
+]
