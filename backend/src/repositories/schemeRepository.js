@@ -8,12 +8,59 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DATA_PATH = path.resolve(__dirname, "../../data/sample_schemes.json");
 
+const toObject = (value, fallback = {}) =>
+  value && typeof value === "object" && !Array.isArray(value) ? value : fallback;
+
+const toStringMap = (value) => {
+  const map = toObject(value);
+  return Object.fromEntries(
+    Object.entries(map).map(([key, val]) => [key, val?.toString?.() ?? ""])
+  );
+};
+
+const normalizeScheme = (scheme) => {
+  const input = toObject(scheme);
+  const eligibility = toObject(input.eligibility);
+
+  return {
+    ...input,
+    id: input.id?.toString?.() ?? "",
+    title: toStringMap(input.title),
+    shortDescription: toStringMap(input.shortDescription),
+    category: input.category?.toString?.() ?? "",
+    state: input.state?.toString?.() ?? "All India",
+    benefits: toStringMap(input.benefits),
+    eligibility: {
+      ...eligibility,
+      ageRange: Array.isArray(eligibility.ageRange) ? eligibility.ageRange : null,
+      states:
+        Array.isArray(eligibility.states) && eligibility.states.length > 0
+          ? eligibility.states
+          : [input.state?.toString?.() ?? "All India"]
+    }
+  };
+};
+
 const loadLocalSchemes = async () => {
   try {
     const file = await fs.readFile(DATA_PATH, "utf-8");
-    return JSON.parse(file);
+    const parsed = JSON.parse(file);
+    if (!Array.isArray(parsed)) {
+      console.error(
+        `[schemeRepository] Invalid sample_schemes.json format at ${DATA_PATH}. Expected an array.`
+      );
+      return [];
+    }
+
+    const normalized = parsed.map(normalizeScheme).filter((scheme) => Boolean(scheme.id));
+    console.log(
+      `[schemeRepository] Loaded ${normalized.length} local schemes from sample_schemes.json`
+    );
+    return normalized;
   } catch (error) {
-    console.error("[schemeRepository] Failed to read sample schemes", error);
+    console.error(
+      `[schemeRepository] Failed to read sample schemes from ${DATA_PATH}: ${error.message}`
+    );
     return [];
   }
 };
@@ -24,16 +71,7 @@ const fetchCombinedSchemes = async (options = {}) => {
     fetchSchemesFromOGD(options)
   ]);
 
-  const normalizedSeeded = seeded.map((scheme) => ({
-    ...scheme,
-    eligibility: {
-      ...scheme.eligibility,
-      ageRange: scheme.eligibility?.ageRange || null,
-      states: scheme.eligibility?.states || [scheme.state]
-    }
-  }));
-
-  const merged = [...normalizedSeeded];
+  const merged = [...seeded];
 
   ogdSchemes.forEach((scheme) => {
     if (!merged.some((s) => s.id === scheme.id)) {

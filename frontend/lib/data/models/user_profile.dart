@@ -25,12 +25,17 @@ class UserProfile {
       };
 
   factory UserProfile.fromMap(Map<String, dynamic> map) {
+    int parseInt(dynamic value, [int fallback = 0]) {
+      if (value is num) return value.toInt();
+      return int.tryParse(value?.toString() ?? '') ?? fallback;
+    }
+
     return UserProfile(
       name: map['name']?.toString() ?? '',
-      age: (map['age'] as num).toInt(),
+      age: parseInt(map['age']),
       gender: map['gender']?.toString() ?? 'any',
       occupation: map['occupation']?.toString() ?? '',
-      income: (map['income'] as num?)?.toInt() ?? 0,
+      income: parseInt(map['income']),
       state: map['state']?.toString() ?? '',
     );
   }

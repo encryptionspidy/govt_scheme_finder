@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,6 +24,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _searchController = TextEditingController();
+  Timer? _searchDebounce;
 
   @override
   void initState() {
@@ -37,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
+    _searchDebounce?.cancel();
     _searchController.dispose();
     super.dispose();
   }
@@ -59,7 +63,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _onSearchChanged(String value) {
-    context.read<SchemesProvider>().search(value);
+    _searchDebounce?.cancel();
+    _searchDebounce = Timer(const Duration(milliseconds: 250), () {
+      if (!mounted) return;
+      context.read<SchemesProvider>().search(value);
+    });
     setState(() {});
   }
 
@@ -71,9 +79,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations loc = context.loc;
-    final UserProfileProvider profileProvider = context.watch<UserProfileProvider>();
+    final UserProfileProvider profileProvider =
+        context.watch<UserProfileProvider>();
     final SchemesProvider schemesProvider = context.watch<SchemesProvider>();
-    final BookmarksProvider bookmarksProvider = context.watch<BookmarksProvider>();
+    final BookmarksProvider bookmarksProvider =
+        context.watch<BookmarksProvider>();
 
     final List<Scheme> visibleSchemes = _searchController.text.isNotEmpty
         ? schemesProvider.searchResults
@@ -87,7 +97,8 @@ class _HomeScreenState extends State<HomeScreen> {
         color: primaryBlue,
         onRefresh: _onRefresh,
         child: CustomScrollView(
-          physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+          physics: const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics()),
           slivers: <Widget>[
             SliverToBoxAdapter(
               child: _HomeHeader(
@@ -102,14 +113,16 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SliverToBoxAdapter(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     if (schemesProvider.isOffline)
                       Padding(
                         padding: const EdgeInsets.only(bottom: 16),
-                        child: _OfflineBanner(message: loc.translate('no_connection')),
+                        child: _OfflineBanner(
+                            message: loc.translate('no_connection')),
                       ),
                     if (isSearching)
                       _SearchResultsSection(
@@ -137,7 +150,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       const SizedBox(height: 16),
                       _CategoryGrid(
-                        onCategoryTap: (String category) => _openBrowse(category: category),
+                        onCategoryTap: (String category) =>
+                            _openBrowse(category: category),
                       ),
                       const SizedBox(height: 32),
                       _SectionHeading(
@@ -188,7 +202,8 @@ class _HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String profileName = profileProvider.profile?.name.trim() ?? '';
-    final String profileOccupation = profileProvider.profile?.occupation.trim() ?? '';
+    final String profileOccupation =
+        profileProvider.profile?.occupation.trim() ?? '';
     final String profileLabel = profileName.isNotEmpty
         ? '${profileName.toUpperCase()} · ${loc.translate('based_on_profile')}'
         : (profileOccupation.isNotEmpty
@@ -222,14 +237,16 @@ class _HomeHeader extends StatelessWidget {
               _IconCircleButton(
                 icon: Icons.bookmark_border_rounded,
                 onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute<void>(builder: (_) => const BookmarksScreen()),
+                  MaterialPageRoute<void>(
+                      builder: (_) => const BookmarksScreen()),
                 ),
               ),
               const SizedBox(width: 12),
               _IconCircleButton(
                 icon: Icons.notifications_none_rounded,
                 onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute<void>(builder: (_) => const NotificationsScreen()),
+                  MaterialPageRoute<void>(
+                      builder: (_) => const NotificationsScreen()),
                 ),
               ),
             ],
@@ -298,13 +315,14 @@ class _LogoBadge extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(18),
         boxShadow: const <BoxShadow>[
-          BoxShadow(color: Color(0x331234FF), blurRadius: 18, offset: Offset(0, 8)),
+          BoxShadow(
+              color: Color(0x331234FF), blurRadius: 18, offset: Offset(0, 8)),
         ],
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-            const Icon(Icons.layers_rounded, color: primaryBlue, size: 28),
+          const Icon(Icons.layers_rounded, color: primaryBlue, size: 28),
           const SizedBox(width: 10),
           Text(
             'SchemePlus',
@@ -367,7 +385,8 @@ class _SearchBar extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(22),
         boxShadow: const <BoxShadow>[
-          BoxShadow(color: Color(0x1A1234FF), blurRadius: 18, offset: Offset(0, 8)),
+          BoxShadow(
+              color: Color(0x1A1234FF), blurRadius: 18, offset: Offset(0, 8)),
         ],
       ),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
@@ -429,7 +448,8 @@ class _SpecialSchemeBanner extends StatelessWidget {
     final String subtitle = scheme != null
         ? (scheme!.shortDescription['en']?.toString() ?? '')
         : loc.translate('special_scheme_description');
-    final String badge = scheme?.category ?? loc.translate('special_scheme_title');
+    final String badge =
+        scheme?.category ?? loc.translate('special_scheme_title');
 
     return SizedBox(
       width: double.infinity,
@@ -483,17 +503,18 @@ class _SpecialSchemeBanner extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
                       color: Colors.white.withValues(alpha: 0.22),
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: Text(
                       badge.toUpperCase(),
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelMedium
-                          ?.copyWith(color: Colors.white, fontWeight: FontWeight.w700, letterSpacing: 0.6),
+                      style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 0.6),
                     ),
                   ),
                   const SizedBox(height: 14),
@@ -501,20 +522,19 @@ class _SpecialSchemeBanner extends StatelessWidget {
                     title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineSmall
-                        ?.copyWith(color: Colors.white, fontWeight: FontWeight.w800, height: 1.1),
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w800,
+                        height: 1.1),
                   ),
                   const SizedBox(height: 12),
                   Text(
                     subtitle,
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyMedium
-                        ?.copyWith(color: Colors.white.withValues(alpha: 0.85), height: 1.5),
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Colors.white.withValues(alpha: 0.85),
+                        height: 1.5),
                   ),
                   const SizedBox(height: 18),
                   Row(
@@ -522,7 +542,8 @@ class _SpecialSchemeBanner extends StatelessWidget {
                       CircleAvatar(
                         radius: 20,
                         backgroundColor: Colors.white.withValues(alpha: 0.18),
-                        child: const Icon(Icons.person_outline, color: Colors.white),
+                        child: const Icon(Icons.person_outline,
+                            color: Colors.white),
                       ),
                       const SizedBox(width: 12),
                       Expanded(
@@ -533,7 +554,9 @@ class _SpecialSchemeBanner extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium
-                              ?.copyWith(color: Colors.white, fontWeight: FontWeight.w600),
+                              ?.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600),
                         ),
                       ),
                       Container(
@@ -543,7 +566,8 @@ class _SpecialSchemeBanner extends StatelessWidget {
                           color: Colors.white.withValues(alpha: 0.18),
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        child: const Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 20),
+                        child: const Icon(Icons.arrow_forward_rounded,
+                            color: Colors.white, size: 20),
                       ),
                     ],
                   ),
@@ -738,7 +762,8 @@ class _RecommendationCard extends StatelessWidget {
     final String description = scheme.shortDescription['en']?.toString() ?? '';
     return GestureDetector(
       onTap: () => Navigator.of(context).push(
-        MaterialPageRoute<void>(builder: (_) => SchemeDetailScreen(scheme: scheme)),
+        MaterialPageRoute<void>(
+            builder: (_) => SchemeDetailScreen(scheme: scheme)),
       ),
       child: Container(
         width: 220,
@@ -747,7 +772,10 @@ class _RecommendationCard extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(24),
           boxShadow: <BoxShadow>[
-            BoxShadow(color: Colors.black.withAlpha(20), blurRadius: 20, offset: const Offset(0, 12)),
+            BoxShadow(
+                color: Colors.black.withAlpha(20),
+                blurRadius: 20,
+                offset: const Offset(0, 12)),
           ],
         ),
         child: Column(
@@ -765,7 +793,8 @@ class _RecommendationCard extends StatelessWidget {
                     ? Image.network(
                         scheme.imageUrl!,
                         fit: BoxFit.cover,
-                        errorBuilder: (_, __, ___) => _ImageFallback(category: scheme.category),
+                        errorBuilder: (_, __, ___) =>
+                            _ImageFallback(category: scheme.category),
                       )
                     : _ImageFallback(category: scheme.category),
               ),
@@ -779,7 +808,8 @@ class _RecommendationCard extends StatelessWidget {
                     children: <Widget>[
                       Flexible(
                         child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 4),
                           decoration: BoxDecoration(
                             color: accentLightBlue,
                             borderRadius: BorderRadius.circular(12),
@@ -791,7 +821,9 @@ class _RecommendationCard extends StatelessWidget {
                             style: Theme.of(context)
                                 .textTheme
                                 .labelMedium
-                                ?.copyWith(color: primaryBlue, fontWeight: FontWeight.w600),
+                                ?.copyWith(
+                                    color: primaryBlue,
+                                    fontWeight: FontWeight.w600),
                           ),
                         ),
                       ),
@@ -801,7 +833,9 @@ class _RecommendationCard extends StatelessWidget {
                         constraints: const BoxConstraints(),
                         onPressed: onBookmark,
                         icon: Icon(
-                          isBookmarked ? Icons.bookmark : Icons.bookmark_outline,
+                          isBookmarked
+                              ? Icons.bookmark
+                              : Icons.bookmark_outline,
                           color: isBookmarked ? primaryBlue : mutedText,
                         ),
                       ),
@@ -839,7 +873,8 @@ class _RecommendationCard extends StatelessWidget {
                         style: Theme.of(context)
                             .textTheme
                             .labelMedium
-                            ?.copyWith(color: mutedText, fontWeight: FontWeight.w600),
+                            ?.copyWith(
+                                color: mutedText, fontWeight: FontWeight.w600),
                       ),
                     ],
                   ),
@@ -852,7 +887,8 @@ class _RecommendationCard extends StatelessWidget {
     );
   }
 
-  String _formatDate(DateTime date) => '${date.day.toString().padLeft(2, '0')}-${date.month.toString().padLeft(2, '0')}-${date.year}';
+  String _formatDate(DateTime date) =>
+      '${date.day.toString().padLeft(2, '0')}-${date.month.toString().padLeft(2, '0')}-${date.year}';
 }
 
 class _ImageFallback extends StatelessWidget {
@@ -863,7 +899,8 @@ class _ImageFallback extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final IconData icon = categoryIconMap[category] ?? Icons.approval_rounded;
-    final List<Color> gradient = categoryGradientMap[category] ?? <Color>[primaryBlue, secondaryBlue];
+    final List<Color> gradient =
+        categoryGradientMap[category] ?? <Color>[primaryBlue, secondaryBlue];
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: gradient),
@@ -912,7 +949,8 @@ class _CategoryTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final IconData icon = categoryIconMap[category] ?? Icons.layers_outlined;
-    final List<Color> gradient = categoryGradientMap[category] ?? <Color>[primaryBlue, secondaryBlue];
+    final List<Color> gradient =
+        categoryGradientMap[category] ?? <Color>[primaryBlue, secondaryBlue];
     return Material(
       color: Colors.white,
       borderRadius: BorderRadius.circular(22),
@@ -940,10 +978,10 @@ class _CategoryTile extends StatelessWidget {
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium
-                    ?.copyWith(color: neutralText, fontWeight: FontWeight.w600, height: 1.3),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: neutralText,
+                    fontWeight: FontWeight.w600,
+                    height: 1.3),
               ),
             ],
           ),
@@ -954,7 +992,8 @@ class _CategoryTile extends StatelessWidget {
 }
 
 class _LatestSchemesList extends StatelessWidget {
-  const _LatestSchemesList({required this.schemes, required this.bookmarksProvider});
+  const _LatestSchemesList(
+      {required this.schemes, required this.bookmarksProvider});
 
   final List<Scheme> schemes;
   final BookmarksProvider bookmarksProvider;
@@ -973,7 +1012,8 @@ class _LatestSchemesList extends StatelessWidget {
                   isBookmarked: bookmarksProvider.isBookmarked(scheme.id),
                   onBookmark: () => bookmarksProvider.toggleBookmark(scheme),
                   onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (_) => SchemeDetailScreen(scheme: scheme)),
+                    MaterialPageRoute<void>(
+                        builder: (_) => SchemeDetailScreen(scheme: scheme)),
                   ),
                 ),
               ))
@@ -998,12 +1038,14 @@ class _CompactSchemeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations loc = context.loc;
-    final IconData icon = categoryIconMap[scheme.category] ?? Icons.layers_outlined;
+    final IconData icon =
+        categoryIconMap[scheme.category] ?? Icons.layers_outlined;
     final String title = scheme.title['en']?.toString() ?? '';
-    final String subtitle = scheme.highlight ?? scheme.shortDescription['en']?.toString() ?? '';
-  final String location = scheme.state.trim().isEmpty
-    ? loc.translate('state_placeholder')
-    : scheme.state;
+    final String subtitle =
+        scheme.highlight ?? scheme.shortDescription['en']?.toString() ?? '';
+    final String location = scheme.state.trim().isEmpty
+        ? loc.translate('state_placeholder')
+        : scheme.state;
 
     return GestureDetector(
       onTap: onTap,
@@ -1014,7 +1056,8 @@ class _CompactSchemeTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           border: Border.all(color: dividerColor),
           boxShadow: const <BoxShadow>[
-            BoxShadow(color: Color(0x081234FF), blurRadius: 12, offset: Offset(0, 6)),
+            BoxShadow(
+                color: Color(0x081234FF), blurRadius: 12, offset: Offset(0, 6)),
           ],
         ),
         child: Row(
@@ -1037,10 +1080,8 @@ class _CompactSchemeTile extends StatelessWidget {
                     title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleSmall
-                        ?.copyWith(fontWeight: FontWeight.w700, color: neutralText),
+                    style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w700, color: neutralText),
                   ),
                   const SizedBox(height: 4),
                   Text(
@@ -1055,7 +1096,8 @@ class _CompactSchemeTile extends StatelessWidget {
                   const SizedBox(height: 8),
                   Row(
                     children: <Widget>[
-                      Icon(Icons.location_on_outlined, size: 16, color: mutedText.withValues(alpha: 0.85)),
+                      Icon(Icons.location_on_outlined,
+                          size: 16, color: mutedText.withValues(alpha: 0.85)),
                       const SizedBox(width: 4),
                       Expanded(
                         child: Text(
@@ -1065,7 +1107,9 @@ class _CompactSchemeTile extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .labelSmall
-                              ?.copyWith(color: mutedText, fontWeight: FontWeight.w600),
+                              ?.copyWith(
+                                  color: mutedText,
+                                  fontWeight: FontWeight.w600),
                         ),
                       ),
                     ],
@@ -1089,7 +1133,8 @@ class _CompactSchemeTile extends StatelessWidget {
                   splashRadius: 18,
                 ),
                 const SizedBox(height: 6),
-                const Icon(Icons.arrow_forward_ios_rounded, size: 16, color: primaryBlue),
+                const Icon(Icons.arrow_forward_ios_rounded,
+                    size: 16, color: primaryBlue),
               ],
             ),
           ],
@@ -1114,7 +1159,8 @@ class _SchemesForYouCTA extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: primaryBlue,
           padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 20),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -1122,13 +1168,14 @@ class _SchemesForYouCTA extends StatelessWidget {
           children: <Widget>[
             Text(
               label,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium
-                  ?.copyWith(color: Colors.white, fontWeight: FontWeight.w700, letterSpacing: 0.3),
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 0.3),
             ),
             const SizedBox(width: 12),
-            const Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 22),
+            const Icon(Icons.arrow_forward_rounded,
+                color: Colors.white, size: 22),
           ],
         ),
       ),
@@ -1162,8 +1209,10 @@ class _SearchResultsSection extends StatelessWidget {
       children: <Widget>[
         Text(
           loc.translate('search_results'),
-          style:
-              Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700, color: neutralText),
+          style: Theme.of(context)
+              .textTheme
+              .titleLarge
+              ?.copyWith(fontWeight: FontWeight.w700, color: neutralText),
         ),
         const SizedBox(height: 16),
         ...results.map((Scheme scheme) => Padding(
@@ -1173,7 +1222,8 @@ class _SearchResultsSection extends StatelessWidget {
                 isBookmarked: bookmarksProvider.isBookmarked(scheme.id),
                 onBookmark: () => bookmarksProvider.toggleBookmark(scheme),
                 onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute<void>(builder: (_) => SchemeDetailScreen(scheme: scheme)),
+                  MaterialPageRoute<void>(
+                      builder: (_) => SchemeDetailScreen(scheme: scheme)),
                 ),
               ),
             )),
@@ -1203,10 +1253,8 @@ class _OfflineBanner extends StatelessWidget {
           Expanded(
             child: Text(
               message,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium
-                  ?.copyWith(color: const Color(0xFFBF7100), fontWeight: FontWeight.w600),
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: const Color(0xFFBF7100), fontWeight: FontWeight.w600),
             ),
           ),
         ],
@@ -1238,7 +1286,8 @@ class _EmptyState extends StatelessWidget {
               color: accentLightBlue,
               borderRadius: BorderRadius.circular(20),
             ),
-            child: const Icon(Icons.inbox_outlined, color: primaryBlue, size: 36),
+            child:
+                const Icon(Icons.inbox_outlined, color: primaryBlue, size: 36),
           ),
           const SizedBox(height: 16),
           Text(
@@ -1280,12 +1329,16 @@ class _LoadingState extends StatelessWidget {
       ),
       child: Row(
         children: <Widget>[
-          const SizedBox(height: 28, width: 28, child: CircularProgressIndicator(strokeWidth: 3)),
+          const SizedBox(
+              height: 28,
+              width: 28,
+              child: CircularProgressIndicator(strokeWidth: 3)),
           const SizedBox(width: 14),
           Expanded(
             child: Text(
               loc.translate('loading'),
-              style: const TextStyle(fontWeight: FontWeight.w600, color: neutralText),
+              style: const TextStyle(
+                  fontWeight: FontWeight.w600, color: neutralText),
             ),
           ),
         ],

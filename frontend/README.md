@@ -1,16 +1,33 @@
-# schemeplus_app
+# SchemePlus Flutter Frontend
 
-A new Flutter project.
+This Flutter app consumes the SchemePlus backend APIs and provides:
+- scheme discovery and filtering
+- profile-based recommendations
+- multilingual UX (English/Tamil)
+- local caching with Hive
 
-## Getting Started
+## Run
 
-This project is a starting point for a Flutter application.
+```bash
+flutter pub get
+flutter run
+```
 
-A few resources to get you started if this is your first Flutter project:
+Optional backend override:
+```bash
+flutter run --dart-define=API_BASE_URL=http://localhost:4000
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The app normalizes the base URL and targets `/api/v1` endpoints.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Main App Entry Points
+
+- `lib/main.dart`
+- `lib/app.dart`
+- `lib/data/services/api_service.dart`
+- `lib/providers/schemes_provider.dart`
+
+## Notes
+
+- Local cache is stored in Hive boxes initialized at startup.
+- Bottom navigation currently uses 3 primary tabs: Home, Browse, Settings.

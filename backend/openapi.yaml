@@ -1,0 +1,161 @@
+openapi: 3.0.3
+info:
+  title: SchemePlus API
+  version: 1.0.0
+servers:
+  - url: http://localhost:4000/api/v1
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: ok
+  /test/ping:
+    get:
+      summary: Test endpoint
+      responses:
+        '200':
+          description: pong
+  /schemes:
+    get:
+      summary: List schemes
+      parameters:
+        - in: query
+          name: q
+          schema: { type: string }
+        - in: query
+          name: category
+          schema: { type: string }
+        - in: query
+          name: state
+          schema: { type: string }
+        - in: query
+          name: page
+          schema: { type: integer, minimum: 1 }
+        - in: query
+          name: limit
+          schema: { type: integer, minimum: 1, maximum: 100 }
+      responses:
+        '200':
+          description: paginated schemes
+  /schemes/search:
+    get:
+      summary: Search schemes
+      parameters:
+        - in: query
+          name: q
+          schema: { type: string }
+        - in: query
+          name: category
+          schema: { type: string }
+        - in: query
+          name: ministry
+          schema: { type: string }
+        - in: query
+          name: beneficiaryType
+          schema: { type: string }
+        - in: query
+          name: tag
+          schema: { type: string }
+      responses:
+        '200':
+          description: filtered scheme list
+  /schemes/categories:
+    get:
+      summary: Get scheme categories with counts
+      responses:
+        '200':
+          description: categories list
+  /schemes/ministries:
+    get:
+      summary: Get ministries with counts
+      responses:
+        '200':
+          description: ministries list
+  /schemes/beneficiary-types:
+    get:
+      summary: Get beneficiary types with counts
+      responses:
+        '200':
+          description: beneficiary types list
+  /schemes/category/{category}:
+    get:
+      summary: List schemes by category
+      parameters:
+        - in: path
+          name: category
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: category-specific scheme list
+  /schemes/state/{state}:
+    get:
+      summary: List schemes by state
+      parameters:
+        - in: path
+          name: state
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: state-specific scheme list
+  /schemes/{id}:
+    get:
+      summary: Get scheme by id
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: scheme detail
+        '404':
+          description: not found
+  /schemes/recommendations:
+    post:
+      summary: Get profile-based recommendations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                age: { type: integer }
+                gender: { type: string }
+                occupation: { type: string }
+                beneficiaryType: { type: string }
+                casteCategory: { type: string }
+                income: { type: integer }
+                state: { type: string }
+      responses:
+        '200':
+          description: ranked schemes
+  /notifications:
+    get:
+      summary: List notifications
+      responses:
+        '200':
+          description: notifications
+  /notifications/simulate:
+    post:
+      summary: Create simulated notification
+      responses:
+        '201':
+          description: notification created
+  /notifications/mark-read/{id}:
+    post:
+      summary: Mark notification as read
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: updated notification
+        '404':
+          description: notification not found

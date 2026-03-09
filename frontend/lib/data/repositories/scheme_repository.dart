@@ -6,7 +6,8 @@ import '../models/user_profile.dart';
 import '../services/api_service.dart';
 
 class SchemeRepository {
-  SchemeRepository({ApiService? apiService}) : _apiService = apiService ?? ApiService();
+  SchemeRepository({ApiService? apiService})
+      : _apiService = apiService ?? ApiService();
 
   final ApiService _apiService;
 
@@ -16,10 +17,12 @@ class SchemeRepository {
     UserProfile profile, {
     required bool networkAvailable,
   }) async {
-    final String key = 'recommendations_${profile.state}_${profile.gender}_${profile.occupation}_${profile.income}_${profile.age}';
+    final String key =
+        'recommendations_${profile.state}_${profile.gender}_${profile.occupation}_${profile.income}_${profile.age}';
     if (networkAvailable) {
       try {
-        final List<Scheme> remote = await _apiService.fetchRecommendations(profile);
+        final List<Scheme> remote =
+            await _apiService.fetchRecommendations(profile);
         await _saveSchemes(key, remote);
         return remote;
       } on ApiException {
@@ -29,7 +32,8 @@ class SchemeRepository {
     return _readSchemes(key);
   }
 
-  Future<List<Scheme>> fetchByCategory(String category, {required bool networkAvailable}) async {
+  Future<List<Scheme>> fetchByCategory(String category,
+      {required bool networkAvailable}) async {
     final String key = 'category_$category';
     if (networkAvailable) {
       try {
@@ -43,7 +47,8 @@ class SchemeRepository {
     return _readSchemes(key);
   }
 
-  Future<List<Scheme>> fetchByState(String state, {required bool networkAvailable}) async {
+  Future<List<Scheme>> fetchByState(String state,
+      {required bool networkAvailable}) async {
     final String key = 'state_$state';
     if (networkAvailable) {
       try {
@@ -57,7 +62,8 @@ class SchemeRepository {
     return _readSchemes(key);
   }
 
-  Future<List<Scheme>> fetchAll({bool forceRefresh = false, bool networkAvailable = true}) async {
+  Future<List<Scheme>> fetchAll(
+      {bool forceRefresh = false, bool networkAvailable = true}) async {
     const String key = 'all';
     if (!forceRefresh) {
       final List<Scheme> cached = _readSchemes(key);
@@ -77,12 +83,34 @@ class SchemeRepository {
     return _readSchemes(key);
   }
 
-  Future<List<Scheme>> search(String query, {bool networkAvailable = true}) async {
-    final List<Scheme> pool = await fetchAll(networkAvailable: networkAvailable);
+  Future<List<Scheme>> fetchAllStaleWhileRevalidate({
+    required bool networkAvailable,
+  }) async {
+    const String key = 'all';
+    final List<Scheme> cached = _readSchemes(key);
+    if (cached.isNotEmpty) {
+      if (networkAvailable) {
+        _apiService.fetchAll().then((List<Scheme> remote) {
+          _saveSchemes(key, remote);
+        }).catchError((_) {
+          // keep stale cache when refresh fails
+        });
+      }
+      return cached;
+    }
+
+    return fetchAll(forceRefresh: true, networkAvailable: networkAvailable);
+  }
+
+  Future<List<Scheme>> search(String query,
+      {bool networkAvailable = true}) async {
+    final List<Scheme> pool =
+        await fetchAll(networkAvailable: networkAvailable);
     final String lower = query.toLowerCase();
     return pool.where((Scheme scheme) {
       final String title = (scheme.title['en']?.toString() ?? '').toLowerCase();
-      final String description = (scheme.shortDescription['en']?.toString() ?? '').toLowerCase();
+      final String description =
+          (scheme.shortDescription['en']?.toString() ?? '').toLowerCase();
       return title.contains(lower) || description.contains(lower);
     }).toList();
   }
@@ -98,7 +126,8 @@ class SchemeRepository {
     final List<dynamic>? cached = _cacheBox.get(key) as List?;
     if (cached == null) return <Scheme>[];
     return cached
-        .map((dynamic item) => Scheme.fromMap((item as Map).cast<String, dynamic>()))
+        .map((dynamic item) =>
+            Scheme.fromMap((item as Map).cast<String, dynamic>()))
         .toList();
   }
 

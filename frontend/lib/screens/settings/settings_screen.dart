@@ -19,7 +19,7 @@ const String _helpCenterUrl = 'https://www.myscheme.gov.in/support';
 const String _privacyPolicyUrl = 'https://www.mygov.in/privacy-policy/';
 const String _termsUrl = 'https://www.mygov.in/terms-conditions/';
 const String _playStoreUrl =
-  'https://play.google.com/store/apps/details?id=com.example.schemeplus_app';
+    'https://play.google.com/store/apps/details?id=com.example.schemeplus_app';
 const String _supportEmail = 'mailto:support@schemeplus.gov.in';
 
 class SettingsScreen extends StatefulWidget {
@@ -41,8 +41,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   void initState() {
     super.initState();
     _profileBox = Hive.box(HiveBoxes.profile);
-    _deadlineReminders = _profileBox.get('deadlineReminders', defaultValue: true) as bool;
-    _newSchemeAlerts = _profileBox.get('newSchemeAlerts', defaultValue: true) as bool;
+    _deadlineReminders =
+        _profileBox.get('deadlineReminders', defaultValue: true) as bool;
+    _newSchemeAlerts =
+        _profileBox.get('newSchemeAlerts', defaultValue: true) as bool;
     _pushEnabled = _profileBox.get('pushEnabled', defaultValue: true) as bool;
   }
 
@@ -136,8 +138,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     setState(() => _isLoggingOut = true);
     try {
-      final UserProfileProvider profileProvider = context.read<UserProfileProvider>();
-      final BookmarksProvider bookmarksProvider = context.read<BookmarksProvider>();
+      final UserProfileProvider profileProvider =
+          context.read<UserProfileProvider>();
+      final BookmarksProvider bookmarksProvider =
+          context.read<BookmarksProvider>();
       final SchemesProvider schemesProvider = context.read<SchemesProvider>();
 
       await Future.wait(<Future<void>>[
@@ -168,8 +172,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations loc = context.loc;
-    final AppLanguageProvider languageProvider = context.watch<AppLanguageProvider>();
-    final UserProfileProvider profileProvider = context.watch<UserProfileProvider>();
+    final AppLanguageProvider languageProvider =
+        context.watch<AppLanguageProvider>();
+    final UserProfileProvider profileProvider =
+        context.watch<UserProfileProvider>();
 
     final UserProfile? profile = profileProvider.profile;
 
@@ -182,30 +188,34 @@ class _SettingsScreenState extends State<SettingsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     _SettingsHeader(
                       loc: loc,
                       onBookmarksTap: () => Navigator.of(context).push(
-                        MaterialPageRoute<void>(builder: (_) => const BookmarksScreen()),
+                        MaterialPageRoute<void>(
+                            builder: (_) => const BookmarksScreen()),
                       ),
                       onNotificationsTap: () => Navigator.of(context).push(
-                        MaterialPageRoute<void>(builder: (_) => const NotificationsScreen()),
+                        MaterialPageRoute<void>(
+                            builder: (_) => const NotificationsScreen()),
                       ),
                     ),
                     const SizedBox(height: 24),
                     _SettingsSection(
-                title: loc.translate('language'),
-                child: _LanguageToggle(
-                  current: languageProvider.locale.languageCode,
-                  onChanged: (String code) => languageProvider.changeLocale(Locale(code)),
-                  labels: <String, String>{
-                    'en': loc.translate('english_short'),
-                    'ta': loc.translate('tamil_short'),
-                  },
-                ),
+                      title: loc.translate('language'),
+                      child: _LanguageToggle(
+                        current: languageProvider.locale.languageCode,
+                        onChanged: (String code) =>
+                            languageProvider.changeLocale(Locale(code)),
+                        labels: <String, String>{
+                          'en': loc.translate('english_short'),
+                          'ta': loc.translate('tamil_short'),
+                        },
+                      ),
                     ),
                     const SizedBox(height: 24),
                     _SettingsSection(
@@ -220,7 +230,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             child: ElevatedButton.icon(
                               icon: const Icon(Icons.edit_outlined),
                               label: Text(loc.translate('profile_edit_cta')),
-                              onPressed: () => _showProfileDialog(context, profile),
+                              onPressed: () =>
+                                  _showProfileDialog(context, profile),
                             ),
                           ),
                         ],
@@ -235,21 +246,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             icon: Icons.notifications_active_outlined,
                             title: loc.translate('deadline_reminders'),
                             value: _deadlineReminders,
-                            onChanged: (bool value) => _updatePreference('deadlineReminders', value),
+                            onChanged: (bool value) =>
+                                _updatePreference('deadlineReminders', value),
                           ),
                           const Divider(height: 28),
                           _ToggleRow(
                             icon: Icons.new_releases_outlined,
                             title: loc.translate('new_scheme_alerts'),
                             value: _newSchemeAlerts,
-                            onChanged: (bool value) => _updatePreference('newSchemeAlerts', value),
+                            onChanged: (bool value) =>
+                                _updatePreference('newSchemeAlerts', value),
                           ),
                           const Divider(height: 28),
                           _ToggleRow(
                             icon: Icons.sms_outlined,
                             title: loc.translate('push_notifications'),
                             value: _pushEnabled,
-                            onChanged: (bool value) => _updatePreference('pushEnabled', value),
+                            onChanged: (bool value) =>
+                                _updatePreference('pushEnabled', value),
                           ),
                         ],
                       ),
@@ -268,7 +282,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 ? const SizedBox(
                                     height: 22,
                                     width: 22,
-                                    child: CircularProgressIndicator(strokeWidth: 2),
+                                    child: CircularProgressIndicator(
+                                        strokeWidth: 2),
                                   )
                                 : null,
                           ),
@@ -277,7 +292,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             icon: Icons.star_rate_outlined,
                             title: loc.translate('rate_app'),
                             subtitle: loc.translate('rate_app_desc'),
-                            onTap: () => _launchExternal(context, _playStoreUrl),
+                            onTap: () =>
+                                _launchExternal(context, _playStoreUrl),
                           ),
                         ],
                       ),
@@ -292,14 +308,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             icon: Icons.help_outline,
                             title: loc.translate('help_center'),
                             subtitle: loc.translate('help_center_desc'),
-                            onTap: () => _launchExternal(context, _helpCenterUrl),
+                            onTap: () =>
+                                _launchExternal(context, _helpCenterUrl),
                           ),
                           const SizedBox(height: 16),
                           _SupportTile(
                             icon: Icons.mail_outline,
                             title: loc.translate('contact_us'),
                             subtitle: loc.translate('contact_us_email'),
-                            onTap: () => _launchExternal(context, _supportEmail),
+                            onTap: () =>
+                                _launchExternal(context, _supportEmail),
                           ),
                         ],
                       ),
@@ -313,7 +331,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             icon: Icons.privacy_tip_outlined,
                             title: loc.translate('privacy_policy'),
                             subtitle: loc.translate('privacy_policy_desc'),
-                            onTap: () => _launchExternal(context, _privacyPolicyUrl),
+                            onTap: () =>
+                                _launchExternal(context, _privacyPolicyUrl),
                           ),
                           const SizedBox(height: 16),
                           _SettingTile(
@@ -342,7 +361,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             ? const SizedBox(
                                 height: 18,
                                 width: 18,
-                                child: CircularProgressIndicator(strokeWidth: 2),
+                                child:
+                                    CircularProgressIndicator(strokeWidth: 2),
                               )
                             : const Icon(Icons.logout_rounded),
                         label: Text(loc.translate('logout')),
@@ -368,12 +388,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  Future<void> _showProfileDialog(BuildContext context, UserProfile? profile) async {
+  Future<void> _showProfileDialog(
+      BuildContext context, UserProfile? profile) async {
     final AppLocalizations loc = context.loc;
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     final TextEditingController nameController =
         TextEditingController(text: profile?.name ?? '');
-    final TextEditingController ageController = TextEditingController(text: profile?.age.toString() ?? '');
+    final TextEditingController ageController =
+        TextEditingController(text: profile?.age.toString() ?? '');
     final TextEditingController incomeController =
         TextEditingController(text: profile?.income.toString() ?? '');
     final TextEditingController occupationController =
@@ -417,56 +439,80 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       const SizedBox(height: 20),
                       TextFormField(
                         controller: nameController,
-                        decoration: InputDecoration(labelText: loc.translate('name')),
+                        decoration:
+                            InputDecoration(labelText: loc.translate('name')),
                         validator: (String? value) =>
-                            (value == null || value.trim().isEmpty) ? loc.translate('form_error') : null,
+                            (value == null || value.trim().isEmpty)
+                                ? loc.translate('form_error')
+                                : null,
                       ),
                       const SizedBox(height: 16),
                       TextFormField(
                         controller: ageController,
                         keyboardType: TextInputType.number,
-                        decoration: InputDecoration(labelText: loc.translate('age')),
+                        decoration:
+                            InputDecoration(labelText: loc.translate('age')),
                         validator: (String? value) {
-                          if (value == null || value.isEmpty) return loc.translate('form_error');
-                          return int.tryParse(value) == null ? loc.translate('form_error') : null;
+                          if (value == null || value.isEmpty)
+                            return loc.translate('form_error');
+                          return int.tryParse(value) == null
+                              ? loc.translate('form_error')
+                              : null;
                         },
                       ),
                       const SizedBox(height: 16),
                       DropdownButtonFormField<String>(
                         initialValue: gender,
-                        decoration: InputDecoration(labelText: loc.translate('gender')),
+                        decoration:
+                            InputDecoration(labelText: loc.translate('gender')),
                         items: <DropdownMenuItem<String>>[
-                          DropdownMenuItem(value: 'any', child: Text(loc.translate('gender_other'))),
-                          DropdownMenuItem(value: 'male', child: Text(loc.translate('gender_male'))),
-                          DropdownMenuItem(value: 'female', child: Text(loc.translate('gender_female'))),
+                          DropdownMenuItem(
+                              value: 'any',
+                              child: Text(loc.translate('gender_other'))),
+                          DropdownMenuItem(
+                              value: 'male',
+                              child: Text(loc.translate('gender_male'))),
+                          DropdownMenuItem(
+                              value: 'female',
+                              child: Text(loc.translate('gender_female'))),
                         ],
                         onChanged: (String? value) => gender = value ?? 'any',
                       ),
                       const SizedBox(height: 16),
                       TextFormField(
                         controller: occupationController,
-                        decoration: InputDecoration(labelText: loc.translate('occupation')),
+                        decoration: InputDecoration(
+                            labelText: loc.translate('occupation')),
                         validator: (String? value) =>
-                            (value == null || value.isEmpty) ? loc.translate('form_error') : null,
+                            (value == null || value.isEmpty)
+                                ? loc.translate('form_error')
+                                : null,
                       ),
                       const SizedBox(height: 16),
                       TextFormField(
                         controller: incomeController,
                         keyboardType: TextInputType.number,
-                        decoration: InputDecoration(labelText: loc.translate('income')),
+                        decoration:
+                            InputDecoration(labelText: loc.translate('income')),
                         validator: (String? value) {
-                          if (value == null || value.isEmpty) return loc.translate('form_error');
-                          return int.tryParse(value) == null ? loc.translate('form_error') : null;
+                          if (value == null || value.isEmpty)
+                            return loc.translate('form_error');
+                          return int.tryParse(value) == null
+                              ? loc.translate('form_error')
+                              : null;
                         },
                       ),
                       const SizedBox(height: 16),
                       DropdownButtonFormField<String>(
                         initialValue: selectedState,
-                        decoration: InputDecoration(labelText: loc.translate('state')),
+                        decoration:
+                            InputDecoration(labelText: loc.translate('state')),
                         items: indianStates
-                            .map((String state) => DropdownMenuItem<String>(value: state, child: Text(state)))
+                            .map((String state) => DropdownMenuItem<String>(
+                                value: state, child: Text(state)))
                             .toList(),
-                        onChanged: (String? value) => selectedState = value ?? 'All India',
+                        onChanged: (String? value) =>
+                            selectedState = value ?? 'All India',
                       ),
                       const SizedBox(height: 24),
                       SizedBox(
@@ -474,8 +520,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         child: ElevatedButton(
                           onPressed: () async {
                             if (!formKey.currentState!.validate()) return;
-                            final int? ageValue = int.tryParse(ageController.text.trim());
-                            final int? incomeValue = int.tryParse(incomeController.text.trim());
+                            final int? ageValue =
+                                int.tryParse(ageController.text.trim());
+                            final int? incomeValue =
+                                int.tryParse(incomeController.text.trim());
                             if (ageValue == null || incomeValue == null) {
                               return;
                             }
@@ -487,10 +535,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               income: incomeValue,
                               state: selectedState,
                             );
-                            final UserProfileProvider profileProvider = context.read<UserProfileProvider>();
-                            final SchemesProvider schemesProvider = context.read<SchemesProvider>();
+                            final UserProfileProvider profileProvider =
+                                context.read<UserProfileProvider>();
                             await profileProvider.saveProfile(updated);
-                            await schemesProvider.loadRecommendations();
                             if (!context.mounted) return;
                             Navigator.of(context).pop();
                           },
@@ -529,8 +576,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
 
     if (confirmed == true && context.mounted) {
-      final UserProfileProvider profileProvider = context.read<UserProfileProvider>();
-      final BookmarksProvider bookmarksProvider = context.read<BookmarksProvider>();
+      final UserProfileProvider profileProvider =
+          context.read<UserProfileProvider>();
+      final BookmarksProvider bookmarksProvider =
+          context.read<BookmarksProvider>();
       await profileProvider.resetProfile();
       await bookmarksProvider.clearAll();
       Hive.box(HiveBoxes.schemesCache).clear();
@@ -563,7 +612,10 @@ class _SettingsHeader extends StatelessWidget {
         gradient: schemeBlueGradient,
         borderRadius: BorderRadius.circular(32),
         boxShadow: <BoxShadow>[
-          BoxShadow(color: primaryBlueDark.withAlpha(60), blurRadius: 24, offset: const Offset(0, 16)),
+          BoxShadow(
+              color: primaryBlueDark.withAlpha(60),
+              blurRadius: 24,
+              offset: const Offset(0, 16)),
         ],
       ),
       child: Column(
@@ -579,7 +631,8 @@ class _SettingsHeader extends StatelessWidget {
                   color: Colors.white.withValues(alpha: 0.18),
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: const Icon(Icons.settings_outlined, color: Colors.white, size: 28),
+                child: const Icon(Icons.settings_outlined,
+                    color: Colors.white, size: 28),
               ),
               const SizedBox(width: 16),
               Expanded(
@@ -588,14 +641,16 @@ class _SettingsHeader extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       loc.translate('settings_title'),
-                      style: theme.textTheme.headlineSmall
-                          ?.copyWith(color: Colors.white, fontWeight: FontWeight.w800, letterSpacing: 0.6),
+                      style: theme.textTheme.headlineSmall?.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w800,
+                          letterSpacing: 0.6),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       loc.translate('settings_intro'),
-                      style: theme.textTheme.bodyMedium
-                          ?.copyWith(color: Colors.white.withAlpha(230), height: 1.4),
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                          color: Colors.white.withAlpha(230), height: 1.4),
                     ),
                   ],
                 ),
@@ -621,7 +676,8 @@ class _SettingsHeader extends StatelessWidget {
 }
 
 class _HeaderActionButton extends StatelessWidget {
-  const _HeaderActionButton({required this.icon, required this.onTap, required this.tooltip});
+  const _HeaderActionButton(
+      {required this.icon, required this.onTap, required this.tooltip});
 
   final IconData icon;
   final VoidCallback onTap;
@@ -686,10 +742,8 @@ class _SettingsSection extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge
-                      ?.copyWith(fontWeight: FontWeight.w700, color: neutralText),
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontWeight: FontWeight.w700, color: neutralText),
                 ),
               ),
             ],
@@ -778,7 +832,8 @@ class _ProfileSummaryCard extends StatelessWidget {
                   gradient: schemeBlueGradient,
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: const Icon(Icons.person_outline, color: Colors.white, size: 30),
+                child: const Icon(Icons.person_outline,
+                    color: Colors.white, size: 30),
               ),
               const SizedBox(width: 16),
               Expanded(
@@ -796,8 +851,12 @@ class _ProfileSummaryCard extends StatelessWidget {
                     Text(
                       occupation.isNotEmpty
                           ? occupation
-                          : (profile?.state ?? loc.translate('state_placeholder')),
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: mutedText),
+                          : (profile?.state ??
+                              loc.translate('state_placeholder')),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium
+                          ?.copyWith(color: mutedText),
                     ),
                   ],
                 ),
@@ -824,7 +883,8 @@ class _ProfileSummaryCard extends StatelessWidget {
               _ProfileStatChip(
                 icon: Icons.currency_rupee_outlined,
                 label: loc.translate('income'),
-                value: profile != null ? '₹${profile!.income.toString()}' : '--',
+                value:
+                    profile != null ? '₹${profile!.income.toString()}' : '--',
                 expanded: true,
               ),
             ],
@@ -867,15 +927,20 @@ class _ProfileStatChip extends StatelessWidget {
               children: <Widget>[
                 Text(
                   label,
-                  style:
-                      Theme.of(context).textTheme.labelMedium?.copyWith(color: mutedText, fontSize: 12),
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelMedium
+                      ?.copyWith(color: mutedText, fontSize: 12),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   value,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium
+                      ?.copyWith(fontWeight: FontWeight.w600),
                 ),
               ],
             ),
@@ -937,8 +1002,9 @@ class _ToggleRow extends StatelessWidget {
             (Set<WidgetState> states) => Colors.white,
           ),
           trackColor: WidgetStateProperty.resolveWith<Color?>(
-            (Set<WidgetState> states) =>
-                states.contains(WidgetState.selected) ? primaryBlue : dividerColor,
+            (Set<WidgetState> states) => states.contains(WidgetState.selected)
+                ? primaryBlue
+                : dividerColor,
           ),
         ),
       ],
@@ -990,10 +1056,8 @@ class _SettingTile extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       title,
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium
-                          ?.copyWith(fontWeight: FontWeight.w600, color: neutralText),
+                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.w600, color: neutralText),
                     ),
                     if (subtitle != null) ...<Widget>[
                       const SizedBox(height: 6),
@@ -1022,7 +1086,11 @@ class _SettingTile extends StatelessWidget {
 }
 
 class _SupportTile extends StatelessWidget {
-  const _SupportTile({required this.icon, required this.title, required this.subtitle, this.onTap});
+  const _SupportTile(
+      {required this.icon,
+      required this.title,
+      required this.subtitle,
+      this.onTap});
 
   final IconData icon;
   final String title;
@@ -1066,13 +1134,17 @@ class _SupportTile extends StatelessWidget {
                     const SizedBox(height: 6),
                     Text(
                       subtitle,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: mutedText),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyMedium
+                          ?.copyWith(color: mutedText),
                     ),
                   ],
                 ),
               ),
               if (onTap != null)
-                const Icon(Icons.open_in_new_rounded, color: primaryBlueDark, size: 20),
+                const Icon(Icons.open_in_new_rounded,
+                    color: primaryBlueDark, size: 20),
             ],
           ),
         ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const String defaultApiBaseUrl = String.fromEnvironment(
   'API_BASE_URL',
-  defaultValue: 'http://10.0.2.2:4000/api',
+  defaultValue: '',
 );
 
 const List<String> categories = <String>[
@@ -52,8 +52,10 @@ const List<String> indianStates = <String>[
 ];
 
 const Map<String, String> schemeQuickApplyLinks = <String, String>{
-  'pm_awas_yojana_urban': 'https://pmaymis.gov.in/pmaymis2_2024/PMAY_SURVEY/Applicant_Login.aspx',
-  'pm_awas_yojana_gramin': 'https://pmayg.dord.gov.in/applicant_public/beneficiary_details/',
+  'pm_awas_yojana_urban':
+      'https://pmaymis.gov.in/pmaymis2_2024/PMAY_SURVEY/Applicant_Login.aspx',
+  'pm_awas_yojana_gramin':
+      'https://pmayg.dord.gov.in/applicant_public/beneficiary_details/',
   'pm_kisan': 'https://pmkisan.gov.in/',
   'pm_surya_ghar_muft_bijli': 'https://pmsuryaghar.gov.in/',
   'ayushman_bharat': 'https://mera.pmjay.gov.in/search/login',
@@ -117,9 +119,15 @@ const Map<String, List<Color>> categoryGradientMap = <String, List<Color>>{
   'Education & Learning': <Color>[Color(0xFF64B5F6), Color(0xFF1976D2)],
   'Health & Wellness': <Color>[Color(0xFF8BC34A), Color(0xFF388E3C)],
   'Women & Child': <Color>[Color(0xFFFF8A80), Color(0xFFE53935)],
-  'Employment & Skill Development': <Color>[Color(0xFFFFB74D), Color(0xFFF57C00)],
+  'Employment & Skill Development': <Color>[
+    Color(0xFFFFB74D),
+    Color(0xFFF57C00)
+  ],
   'Financial Services': <Color>[Color(0xFF81D4FA), Color(0xFF0288D1)],
-  'Agriculture & Rural Development': <Color>[Color(0xFFA5D6A7), Color(0xFF2E7D32)],
+  'Agriculture & Rural Development': <Color>[
+    Color(0xFFA5D6A7),
+    Color(0xFF2E7D32)
+  ],
   'Housing': <Color>[Color(0xFFFFCC80), Color(0xFFFB8C00)],
   'Social Security': <Color>[Color(0xFF90CAF9), Color(0xFF1E88E5)],
   'Business & MSME': <Color>[Color(0xFFCE93D8), Color(0xFF8E24AA)],

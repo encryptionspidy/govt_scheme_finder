@@ -48,6 +48,17 @@ class Scheme {
       };
 
   factory Scheme.fromMap(Map<String, dynamic> map) {
+    Map<String, dynamic> parseStringMap(dynamic value) {
+      if (value is Map) {
+        return value.map((dynamic key, dynamic val) =>
+            MapEntry<String, dynamic>(key.toString(), val?.toString() ?? ''));
+      }
+      if (value is String && value.trim().isNotEmpty) {
+        return <String, dynamic>{'en': value};
+      }
+      return <String, dynamic>{};
+    }
+
     DateTime? parseDate(dynamic value) {
       if (value == null) return null;
       if (value is DateTime) return value;
@@ -56,12 +67,13 @@ class Scheme {
 
     return Scheme(
       id: map['id']?.toString() ?? '',
-      title: Map<String, dynamic>.from(map['title'] as Map),
-      shortDescription: Map<String, dynamic>.from(map['shortDescription'] as Map),
+      title: parseStringMap(map['title']),
+      shortDescription: parseStringMap(map['shortDescription']),
       category: map['category']?.toString() ?? '',
       state: map['state']?.toString() ?? '',
-      eligibility: Eligibility.fromMap(map['eligibility'] as Map<String, dynamic>?),
-      benefits: Map<String, dynamic>.from(map['benefits'] as Map),
+      eligibility:
+          Eligibility.fromMap(map['eligibility'] as Map<String, dynamic>?),
+      benefits: parseStringMap(map['benefits']),
       applicationUrl: map['applicationUrl']?.toString(),
       lastDate: parseDate(map['lastDate']),
       imageUrl: map['imageUrl']?.toString(),

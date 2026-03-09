@@ -22,6 +22,8 @@ class SchemesProvider extends ChangeNotifier {
   bool _isLoading = false;
   String? _error;
   bool _allSchemesLoaded = false;
+  bool _recommendationsLoaded = false;
+  String? _lastRecommendationKey;
   Map<String, int> _categoryCounts = <String, int>{};
   String _selectedCategory = categories.first;
   String _selectedState = indianStates.first;
@@ -64,8 +66,7 @@ class SchemesProvider extends ChangeNotifier {
   ) {
     if (_profileProvider != profileProvider) {
       _profileProvider?.removeListener(_onProfileChanged);
-      _profileProvider = profileProvider
-        ..addListener(_onProfileChanged);
+      _profileProvider = profileProvider..addListener(_onProfileChanged);
     }
     _connectivityProvider = connectivityProvider;
     // Preload all schemes on initialization
@@ -83,6 +84,13 @@ class SchemesProvider extends ChangeNotifier {
   Future<void> loadRecommendations() async {
     final UserProfile? profile = _profileProvider?.profile;
     if (profile == null) return;
+    final String profileKey =
+        '${profile.state}|${profile.gender}|${profile.occupation}|${profile.income}|${profile.age}';
+    if (_recommendationsLoaded &&
+        _lastRecommendationKey == profileKey &&
+        _recommendations.isNotEmpty) {
+      return;
+    }
     await _load(
       () => _repository.fetchRecommendations(
         profile,
@@ -90,6 +98,8 @@ class SchemesProvider extends ChangeNotifier {
       ),
       assign: (List<Scheme> data) {
         _recommendations = data;
+        _recommendationsLoaded = true;
+        _lastRecommendationKey = profileKey;
         if (data.isNotEmpty) {
           _cacheAllSchemes(data);
         }
@@ -142,10 +152,15 @@ class SchemesProvider extends ChangeNotifier {
   Future<void> fetchAllCategories({bool forceRefresh = false}) async {
     if (_allSchemesLoaded && !forceRefresh) return;
     try {
-      final List<Scheme> all = await _repository.fetchAll(
-        forceRefresh: forceRefresh,
-        networkAvailable: _connectivityProvider?.isOnline ?? true,
-      );
+      final bool network = _connectivityProvider?.isOnline ?? true;
+      final List<Scheme> all = forceRefresh
+          ? await _repository.fetchAll(
+              forceRefresh: true,
+              networkAvailable: network,
+            )
+          : await _repository.fetchAllStaleWhileRevalidate(
+              networkAvailable: network,
+            );
       _cacheAllSchemes(all);
       _allSchemesLoaded = true;
       notifyListeners();
@@ -190,6 +205,7 @@ class SchemesProvider extends ChangeNotifier {
       assign(data);
     } catch (e) {
       _error = e.toString();
+      debugPrint('[SchemesProvider] Load failed: $_error');
     } finally {
       if (!silent) {
         _isLoading = false;
